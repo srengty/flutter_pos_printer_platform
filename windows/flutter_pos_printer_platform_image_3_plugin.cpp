@@ -1,4 +1,4 @@
-#include "include/flutter_pos_printer_platform/flutter_pos_printer_platform_plugin.h"
+#include "include/flutter_pos_printer_platform_image_3/flutter_pos_printer_platform_image_3_plugin.h"
 
 // This must be included before many other Windows headers.
 #include <windows.h>
@@ -41,7 +41,7 @@ namespace
   {
     auto channel =
         std::make_unique<flutter::MethodChannel<flutter::EncodableValue>>(
-            registrar->messenger(), "com.sersoluciones.flutter_pos_printer_platform",
+            registrar->messenger(), "com.sersoluciones.flutter_pos_printer_platform_image_3",
             &flutter::StandardMethodCodec::GetInstance());
 
     auto plugin = std::make_unique<FlutterPosPrinterPlatformPlugin>();
@@ -77,8 +77,8 @@ namespace
             EncodableValue(printer.name);
         map[EncodableValue("model")] =
             EncodableValue(printer.model);
-        map[EncodableValue("default")] =
-            EncodableValue(printer.default);
+        map[EncodableValue("defaultPrinter")] =
+            EncodableValue(printer.defaultPrinter);
         map[EncodableValue("available")] =
             EncodableValue(printer.available);
         list.push_back(map);

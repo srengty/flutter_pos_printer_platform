@@ -10,16 +10,16 @@ struct Printer
 {
     const std::string name;
     const std::string model;
-    const bool default;
+    const bool defaultPrinter;
     const bool available;
 
     Printer(std::string name,
             std::string model,
-            bool default,
+            bool defaultPrinter,
             bool available)
         : name(name),
           model(model),
-          default(default),
+          defaultPrinter(defaultPrinter),
           available(available) {}
 };
 
